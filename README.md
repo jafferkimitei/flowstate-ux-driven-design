@@ -35,7 +35,7 @@ FlowState demonstrates how **perceived performance** can be designed intentional
 
 ## Experience Overview
 
-![FlowState Overview](./screen1.jpg)
+![FlowState Overview](./public/Screen1.jpg)
 
 The interface is intentionally minimal.
 Every visual decision exists to support timing, clarity, and user trust — not decoration.
@@ -47,7 +47,7 @@ Every visual decision exists to support timing, clarity, and user trust — not 
 ### 1. Skeleton Timing
 Skeletons are not placeholders — they are **promises**.
 
-![Skeleton Timing Demo](./screen2.jpg)
+![Skeleton Timing Demo](./public/screen2.jpg)
 
 This demo shows how:
 - Skeletons appear *before* data requests
@@ -61,7 +61,7 @@ This demo shows how:
 ### 2. Optimistic UI
 Users should never wait for permission to feel progress.
 
-![Optimistic UI Demo](./screen3.jpg)
+![Optimistic UI Demo](./public/screen3.jpg)
 
 This demo illustrates:
 - Immediate UI updates on action
@@ -75,7 +75,7 @@ This demo illustrates:
 ### 3. Motion as Feedback
 Motion is a language, not decoration.
 
-![Motion as Feedback Demo](./screen4.jpg)
+![Motion as Feedback Demo](./public/screen4.jpg)
 
 This demo explores:
 - Sub-100ms interaction feedback
