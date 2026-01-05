@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import React, { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import gsap from "gsap";
-import { SkeletonDemo } from "./components/SkeletonDemo";
-import { OptimisticDemo } from "./components/OptimisticDemo";
-import { MotionFeedbackDemo } from "./components/MotionFeedbackDemo";
-import { HydrationDemo } from "./components/HydrationDemo";
+import { useEffect, useRef, useState } from "react";
 import { FlowVisualization } from "./components/FlowVisualization";
+import { HydrationDemo } from "./components/HydrationDemo";
+import { MotionFeedbackDemo } from "./components/MotionFeedbackDemo";
+import { OptimisticDemo } from "./components/OptimisticDemo";
+import { SkeletonDemo } from "./components/SkeletonDemo";
 
 const acts = [
   {
@@ -62,7 +62,7 @@ export default function App() {
           opacity: 0,
           duration: 1,
         },
-        "-=0.6"
+        "-=0.6",
       )
       .from(
         ".hero-description",
@@ -71,7 +71,7 @@ export default function App() {
           opacity: 0,
           duration: 0.8,
         },
-        "-=0.4"
+        "-=0.4",
       )
       .from(
         ".scroll-indicator",
@@ -80,7 +80,7 @@ export default function App() {
           opacity: 0,
           duration: 0.6,
         },
-        "-=0.3"
+        "-=0.3",
       );
   }, []);
 
@@ -101,8 +101,11 @@ export default function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [activeAct]);
 
+  // biome-ignore lint/suspicious/noExplicitAny: Framer Motion type compatibility
   const MotionSection = motion.section as any;
+  // biome-ignore lint/suspicious/noExplicitAny: Framer Motion type compatibility
   const MotionDiv = motion.div as any;
+  // biome-ignore lint/suspicious/noExplicitAny: Framer Motion type compatibility
   const MotionButton = motion.button as any;
 
   return (

@@ -1,22 +1,21 @@
-"use client"
+"use client";
 
-import { useState} from "react";
 import { motion } from "framer-motion";
-
+import { useState } from "react";
 
 const container = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.05
-    }
-  }
+      staggerChildren: 0.05,
+    },
+  },
 };
 
 const item = {
   hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.3 } }
+  show: { opacity: 1, y: 0, transition: { duration: 0.3 } },
 };
 
 interface Component {
@@ -26,6 +25,11 @@ interface Component {
   priority: "critical" | "secondary" | "lazy";
   delay: number;
 }
+
+// biome-ignore lint/suspicious/noExplicitAny: Framer Motion type compatibility
+const MotionDiv = motion.div as any;
+// biome-ignore lint/suspicious/noExplicitAny: Framer Motion type compatibility
+const MotionButton = motion.button as any;
 
 export function HydrationDemo() {
   const [isHydrating, setIsHydrating] = useState(false);
@@ -62,9 +66,6 @@ export function HydrationDemo() {
     { id: 6, name: "Footer", hydrated: false, priority: "lazy", delay: 2000 },
   ]);
 
-  const MotionButton = motion.button as any;
-  const MotionDiv = motion.div as any;
-
   const startHydration = () => {
     setIsHydrating(true);
     setComponents((prev) => prev.map((c) => ({ ...c, hydrated: false })));
@@ -74,8 +75,8 @@ export function HydrationDemo() {
       setTimeout(() => {
         setComponents((prev) =>
           prev.map((c) =>
-            c.id === component.id ? { ...c, hydrated: true } : c
-          )
+            c.id === component.id ? { ...c, hydrated: true } : c,
+          ),
         );
       }, component.delay);
     });
@@ -124,8 +125,13 @@ export function HydrationDemo() {
         </MotionButton>
       </div>
 
-      <MotionDiv className="space-y-3 mb-6" variants={container} initial="hidden" animate="show">
-        {components.map((component, index) => (
+      <MotionDiv
+        className="space-y-3 mb-6"
+        variants={container}
+        initial="hidden"
+        animate="show"
+      >
+        {components.map((component) => (
           <MotionDiv
             key={component.id}
             className="relative overflow-hidden"
@@ -139,7 +145,7 @@ export function HydrationDemo() {
                   : "transparent",
                 borderColor: getPriorityColor(
                   component.priority,
-                  component.hydrated
+                  component.hydrated,
                 ),
               }}
             >
@@ -149,7 +155,7 @@ export function HydrationDemo() {
                   style={{
                     backgroundColor: getPriorityColor(
                       component.priority,
-                      component.hydrated
+                      component.hydrated,
                     ),
                   }}
                   animate={{
@@ -188,7 +194,7 @@ export function HydrationDemo() {
                   style={{
                     background: `linear-gradient(90deg, transparent, ${getPriorityColor(
                       component.priority,
-                      true
+                      true,
                     )}20, transparent)`,
                   }}
                   initial={{ x: "-100%" }}
@@ -197,7 +203,7 @@ export function HydrationDemo() {
                 />
               )}
             </div>
-            </MotionDiv>
+          </MotionDiv>
         ))}
       </MotionDiv>
 

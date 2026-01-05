@@ -4,10 +4,10 @@
 
 :root {
   --font-size: 16px;
-  --background: #F7F7F5;
-  --foreground: #0A0A0A;
-  --canvas: #FFFFFF;
-  --accent-blue: #6B7FFF;
+  --background: #f7f7f5;
+  --foreground: #0a0a0a;
+  --canvas: #ffffff;
+  --accent-blue: #6b7fff;
   --accent-blue-dim: rgba(107, 127, 255, 0.1);
   --hairline: rgba(0, 0, 0, 0.08);
   --muted-text: rgba(10, 10, 10, 0.6);
@@ -17,7 +17,8 @@
   --ease-confident: cubic-bezier(0.32, 0, 0.1, 1);
 
   /* Typography */
-  --font-grotesk: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
+  --font-grotesk:
+    -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
 
   /* Spacing */
   --spacing-unit: 1rem;
@@ -211,7 +212,7 @@
   }
 
   .grain::before {
-    content: '';
+    content: "";
     position: fixed;
     top: 0;
     left: 0;

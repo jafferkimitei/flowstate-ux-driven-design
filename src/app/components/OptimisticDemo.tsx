@@ -1,7 +1,8 @@
-"use client"
+"use client";
 
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import type React from "react";
+import { useState } from "react";
 
 interface Task {
   id: number;
@@ -9,10 +10,12 @@ interface Task {
   completed: boolean;
   optimistic?: boolean;
 }
-
-  const MotionButton = motion.button as any;
-  const MotionDiv = motion.div as any;
-  const MotionSvg = motion.svg as any;
+// biome-ignore lint/suspicious/noExplicitAny: Framer Motion type compatibility
+const MotionButton = motion.button as any;
+// biome-ignore lint/suspicious/noExplicitAny: Framer Motion type compatibility
+const MotionDiv = motion.div as any;
+// biome-ignore lint/suspicious/noExplicitAny: Framer Motion type compatibility
+const MotionSvg = motion.svg as any;
 
 export function OptimisticDemo() {
   const [tasks, setTasks] = useState<Task[]>([
@@ -23,16 +26,13 @@ export function OptimisticDemo() {
   const [inputValue, setInputValue] = useState("");
 
   const toggleTask = (id: number) => {
-
     setTasks((prev) =>
       prev.map((task) =>
-        task.id === id ? { ...task, completed: !task.completed } : task
-      )
+        task.id === id ? { ...task, completed: !task.completed } : task,
+      ),
     );
 
-
     setTimeout(() => {
-
       console.log("Task updated successfully");
     }, 500);
   };
@@ -48,22 +48,19 @@ export function OptimisticDemo() {
       optimistic: true,
     };
 
-
     setTasks((prev) => [...prev, newTask]);
     setInputValue("");
-
 
     setTimeout(() => {
       setTasks((prev) =>
         prev.map((task) =>
-          task.id === newTask.id ? { ...task, optimistic: false } : task
-        )
+          task.id === newTask.id ? { ...task, optimistic: false } : task,
+        ),
       );
     }, 600);
   };
 
   const removeTask = (id: number) => {
-
     setTasks((prev) => prev.filter((task) => task.id !== id));
   };
 

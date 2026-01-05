@@ -1,10 +1,13 @@
-"use client"
+"use client";
 
-import React, { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "motion/react";
 import gsap from "gsap";
+import { AnimatePresence, motion } from "motion/react";
+import type React from "react";
+import { useRef, useState } from "react";
 
+// biome-ignore lint/suspicious/noExplicitAny: Framer Motion type compatibility
 const MotionDiv = motion.div as React.ComponentType<any>;
+// biome-ignore lint/suspicious/noExplicitAny: Framer Motion type compatibility
 const MotionButton = motion.button as React.ComponentType<any>;
 
 interface ContentItem {
@@ -22,7 +25,6 @@ export function SkeletonDemo() {
     setIsLoading(true);
     setContent([]);
 
-
     if (skeletonRef.current) {
       const shimmerElements = skeletonRef.current.querySelectorAll(".shimmer");
       gsap.fromTo(
@@ -35,10 +37,9 @@ export function SkeletonDemo() {
           repeat: -1,
           yoyo: true,
           ease: "power2.inOut",
-        }
+        },
       );
     }
-
 
     setTimeout(() => {
       const mockData: ContentItem[] = [
@@ -59,7 +60,6 @@ export function SkeletonDemo() {
           description: "System feels faster by communicating intention.",
         },
       ];
-
 
       setTimeout(() => {
         setContent(mockData);
@@ -104,26 +104,26 @@ export function SkeletonDemo() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
-            {[1, 2, 3].map((i) => (
-              <div
-                key={i}
-                className="p-4 rounded-md"
-                style={{ backgroundColor: "var(--background)" }}
-              >
+              {[1, 2, 3].map((i) => (
                 <div
-                  className="shimmer h-5 w-2/3 rounded mb-3"
-                  style={{ backgroundColor: "var(--hairline)" }}
-                />
-                <div
-                  className="shimmer h-4 w-full rounded mb-2"
-                  style={{ backgroundColor: "var(--hairline)" }}
-                />
-                <div
-                  className="shimmer h-4 w-4/5 rounded"
-                  style={{ backgroundColor: "var(--hairline)" }}
-                />
-              </div>
-            ))}
+                  key={i}
+                  className="p-4 rounded-md"
+                  style={{ backgroundColor: "var(--background)" }}
+                >
+                  <div
+                    className="shimmer h-5 w-2/3 rounded mb-3"
+                    style={{ backgroundColor: "var(--hairline)" }}
+                  />
+                  <div
+                    className="shimmer h-4 w-full rounded mb-2"
+                    style={{ backgroundColor: "var(--hairline)" }}
+                  />
+                  <div
+                    className="shimmer h-4 w-4/5 rounded"
+                    style={{ backgroundColor: "var(--hairline)" }}
+                  />
+                </div>
+              ))}
             </MotionDiv>
           </div>
         ) : content.length > 0 ? (

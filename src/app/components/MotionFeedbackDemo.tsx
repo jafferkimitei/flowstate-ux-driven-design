@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 export function MotionFeedbackDemo() {
   const [hoveredButton, setHoveredButton] = useState<string | null>(null);
@@ -26,10 +26,12 @@ export function MotionFeedbackDemo() {
     },
   ];
 
+  // biome-ignore lint/suspicious/noExplicitAny: Framer Motion type compatibility
   const MotionButton = motion.button as any;
+  // biome-ignore lint/suspicious/noExplicitAny: Framer Motion type compatibility
   const MotionDiv = motion.div as any;
+  // biome-ignore lint/suspicious/noExplicitAny: Framer Motion type compatibility
   const MotionSvg = motion.svg as any;
-
 
   const handleButtonPress = (id: string) => {
     setPressedButton(id);
@@ -65,14 +67,14 @@ export function MotionFeedbackDemo() {
                   successButton === button.id
                     ? "var(--accent-blue)"
                     : hoveredButton === button.id
-                    ? "var(--background)"
-                    : "transparent",
+                      ? "var(--background)"
+                      : "transparent",
                 borderColor:
                   successButton === button.id
                     ? "var(--accent-blue)"
                     : hoveredButton === button.id
-                    ? "var(--accent-blue)"
-                    : "var(--hairline)",
+                      ? "var(--accent-blue)"
+                      : "var(--hairline)",
                 color:
                   successButton === button.id ? "#ffffff" : "var(--foreground)",
               }}
