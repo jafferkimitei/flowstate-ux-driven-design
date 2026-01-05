@@ -121,6 +121,12 @@ Tools are chosen for **control**, not trend alignment.
 
 ---
 
+## Deployment
+
+FlowState is deployed via Netlify with automated preview deployments on every pull request and guarded production releases on `main`.
+
+All changes are validated in a live environment before shipping.
+
 ## Final Note
 
 FlowState is intentionally minimal.
