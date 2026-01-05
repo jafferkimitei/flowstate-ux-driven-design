@@ -1,37 +1,145 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FlowState
+## Performance as UX
+**Frontend Systems · Perceived Performance**
 
-## Getting Started
+FlowState is an experimental microsite that demonstrates a simple but often misunderstood truth:
 
-First, run the development server:
+> **Performance is not a metric. It’s a feeling.**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This project explores how users *perceive* speed — and how thoughtful UX decisions can outperform raw technical optimizations when it comes to trust, flow, and usability.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Why FlowState Exists
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Modern frontend teams obsess over numbers:
+- Lighthouse scores
+- Time to Interactive
+- Bundle size
 
-## Learn More
+Yet users don’t experience metrics.
+They experience **waiting, reassurance, feedback, and momentum**.
 
-To learn more about Next.js, take a look at the following resources:
+FlowState reframes performance as a **UX system**, not a DevTools report.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Core Thesis
 
-## Deploy on Vercel
+> A fast interface that feels slow is broken.
+> A slower interface that feels instant is successful.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+FlowState demonstrates how **perceived performance** can be designed intentionally through motion, feedback, anticipation, and progressive disclosure.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# flowstate-ux-driven-design
+---
+
+## Experience Overview
+
+![FlowState Overview](./screen1.jpg)
+
+The interface is intentionally minimal.
+Every visual decision exists to support timing, clarity, and user trust — not decoration.
+
+---
+
+## Featured Demos
+
+### 1. Skeleton Timing
+Skeletons are not placeholders — they are **promises**.
+
+![Skeleton Timing Demo](./screen2.jpg)
+
+This demo shows how:
+- Skeletons appear *before* data requests
+- Content replaces skeletons only after paint
+- Timing smooths cognitive transitions
+
+**Outcome:** Waiting feels intentional, not accidental.
+
+---
+
+### 2. Optimistic UI
+Users should never wait for permission to feel progress.
+
+![Optimistic UI Demo](./screen3.jpg)
+
+This demo illustrates:
+- Immediate UI updates on action
+- Background reconciliation with the server
+- Graceful rollback on failure
+
+**Outcome:** The interface assumes success, creating confidence.
+
+---
+
+### 3. Motion as Feedback
+Motion is a language, not decoration.
+
+![Motion as Feedback Demo](./screen4.jpg)
+
+This demo explores:
+- Sub-100ms interaction feedback
+- Motion as state confirmation
+- Visual reassurance over loading indicators
+
+**Outcome:** The system feels responsive even under latency.
+
+---
+
+## Design Philosophy
+
+### Motion
+- No animation without purpose
+- No decorative transitions
+- Custom easing only
+- Motion communicates system state
+
+### Visuals
+- Minimal
+- Editorial
+- High contrast
+- Negative space as a design tool
+
+### Copy
+- Short
+- Declarative
+- System-oriented
+- No marketing language
+
+---
+
+## Technology Stack
+
+- **Next.js (App Router)** — selective rendering and hydration
+- **TypeScript** — intentional systems, not experiments
+- **GSAP** — timeline-level control over perception
+- **Framer Motion** — state-driven layout transitions
+- **Modern CSS** — variables, composability, restraint
+
+Tools are chosen for **control**, not trend alignment.
+
+---
+
+## What FlowState Proves
+
+FlowState demonstrates that the author:
+- Designs for human perception, not just machines
+- Understands frontend systems deeply
+- Treats UX as infrastructure
+- Can articulate and execute performance as a design discipline
+
+This is not about being fast.
+It’s about **feeling fast**.
+
+---
+
+## Final Note
+
+FlowState is intentionally minimal.
+
+If something feels impressive but unnecessary, it has been removed.
+
+What remains is the experience —
+and how it makes latency disappear.
+
+## https://jafferkimitei.com/
